@@ -7,17 +7,69 @@
 //
 
 import SwiftUI
+import Request
 
 struct ContentView : View {
+    @State private var subreddit: String = "swift"
+    @State private var sortBy: SortBy = .hot
+    
+    @State private var showSortSheet: Bool = false
+    @State private var showSubredditSheet: Bool = false
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            // Load the posts
+            RequestView(Listing.self, Request {
+                Url("https://www.reddit.com/r/\(self.subreddit)/\(self.sortBy.rawValue).json")
+                Query(["raw_json":"1"])
+            }) { listing in
+                // List of `PostView`s when loaded
+                List(listing != nil ? listing!.data.children.map { $0.data } : [], id: \.id) { post in
+                    NavigationLink(destination: PostDetailView(post: post)) {
+                        PostView(post: post)
+                    }
+                }
+                // Spinner when loading
+                SpinnerView()
+            }
+            // Force inline NavigationBar
+            .navigationBarTitle(Text(""), displayMode: .inline)
+            .navigationBarItems(leading: HStack {
+                Button(action: {
+                    self.showSubredditSheet.toggle()
+                }) {
+                    Text("r/\(self.subreddit)")
+                }
+            }, trailing: HStack {
+                Button(action: {
+                    self.showSortSheet.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.up.arrow.down")
+                        Text(self.sortBy.rawValue)
+                    }
+                }
+            })
+            // Sorting method
+            .actionSheet(isPresented: $showSortSheet) {
+                ActionSheet(title: Text("Sort By:"), buttons: [SortBy.hot, SortBy.top, SortBy.new, SortBy.controversial, SortBy.rising].map { method in
+                    ActionSheet.Button.default(Text(method.rawValue.prefix(1).uppercased() + method.rawValue.dropFirst()), onTrigger: {
+                        self.sortBy = method
+                    })
+                })
+            }
+            // Subreddit selection
+            .popover(isPresented: $showSubredditSheet, attachmentAnchor: .point(UnitPoint(x: 20, y: 20))) {
+                HStack(spacing: 0) {
+                    Text("r/")
+                    TextField("Subreddit", text: self.$subreddit) {
+                        self.showSubredditSheet.toggle()
+                    }
+                }
+                .frame(width: 200)
+                .padding()
+                .background(Color("popover"), cornerRadius: 10)
+            }
+        }
     }
 }
-
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif
