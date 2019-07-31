@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+#if os(iOS)
 import WebKit
 
 struct WebView: UIViewRepresentable {
@@ -17,7 +18,15 @@ struct WebView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {
-        uiView.load(URLRequest(url: self.url))
+        uiView.load(URLRequest(url: url))
         uiView.isOpaque = false
     }
 }
+#elseif os(watchOS)
+struct WebView: View {
+    let url: URL
+    var body: some View {
+        Text("")
+    }
+}
+#endif

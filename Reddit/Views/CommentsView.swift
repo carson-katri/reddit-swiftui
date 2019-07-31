@@ -73,6 +73,6 @@ struct CommentView: View {
                 }
             }
         }
-        .padding([.leading], Length(self.nestLevel * 10))
+        .padding([.leading], CGFloat(self.nestLevel * 10))
     }
 }

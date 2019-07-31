@@ -24,7 +24,7 @@ struct ContentView : View {
                 Query(["raw_json":"1"])
             }) { listing in
                 // List of `PostView`s when loaded
-                List(listing != nil ? listing!.data.children.map { $0.data } : [], id: \.id) { post in
+                List(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
                     NavigationLink(destination: PostDetailView(post: post)) {
                         PostView(post: post)
                     }
@@ -53,9 +53,9 @@ struct ContentView : View {
             // Sorting method
             .actionSheet(isPresented: $showSortSheet) {
                 ActionSheet(title: Text("Sort By:"), buttons: [SortBy.hot, SortBy.top, SortBy.new, SortBy.controversial, SortBy.rising].map { method in
-                    ActionSheet.Button.default(Text(method.rawValue.prefix(1).uppercased() + method.rawValue.dropFirst()), onTrigger: {
+                    ActionSheet.Button.default(Text(method.rawValue.prefix(1).uppercased() + method.rawValue.dropFirst())) {
                         self.sortBy = method
-                    })
+                    }
                 })
             }
             // Subreddit selection
@@ -68,8 +68,10 @@ struct ContentView : View {
                 }
                 .frame(width: 200)
                 .padding()
-                .background(Color("popover"), cornerRadius: 10)
+                .background(Color("popover"))
+                .cornerRadius(10)
             }
+            Text("Select a post")
         }
     }
 }

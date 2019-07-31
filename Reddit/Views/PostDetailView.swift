@@ -20,20 +20,6 @@ struct PostDetailView: View {
             Text(post.title)
                 .font(.title)
                 .bold()
-                .lineLimit(nil)
-        }
-    }
-    
-    var metadata: some View {
-        HStack {
-            Spacer()
-            ForEach([("arrow.up", "\(post.score)"), ("text.bubble", "\(post.num_comments)"), ("clock", "\(timeSince(post.created))")], id: \.0) { data in
-                Group {
-                    Image(systemName: data.0)
-                    Text(data.1)
-                    Spacer()
-                }
-            }
         }
     }
     
@@ -60,9 +46,8 @@ struct PostDetailView: View {
             // Body
             if post.selftext != "" {
                 Text(post.selftext)
-                    .lineLimit(nil)
             }
-            metadata
+            MetadataView(post: post, spaced: true)
             CommentsView(post: post)
         }
         .navigationBarTitle(Text("r/\(post.subreddit)"), displayMode: .inline)

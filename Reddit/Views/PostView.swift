@@ -13,7 +13,7 @@ struct PostView: View {
     let post: Post
     
     var body: some View {
-        HStack {
+        HStack(spacing: 5) {
             if post.thumbnail != "self" {
                 RequestImage(Url(post.thumbnail))
                     .aspectRatio(contentMode: .fill)
@@ -22,36 +22,24 @@ struct PostView: View {
                     .cornerRadius(5.0)
             }
             VStack(alignment: .leading) {
-                // Title
-                HStack {
-                    // Pinned icon
-                    if post.stickied {
-                        Image(systemName: "pin.fill")
-                            .resizable()
-                            .frame(width: 10, height: 10)
-                            .rotationEffect(Angle(degrees: 45))
-                            .foregroundColor(Color("stickied"))
-                    }
-                    Text(post.title)
-                        .font(.headline)
-                }
+                Text(post.title)
+                    .font(.headline)
+                    .lineLimit(1)
                 // Body preview
-                Text(post.selftext != "" ? post.selftext : " ")
+                Group {
+                    if post.url.contains("reddit") {
+                        Text(post.selftext != "" ? post.selftext : " ")
+                    } else {
+                        Text(post.url)
+                    }
+                }
                     .font(.caption)
                     .opacity(0.75)
+                    .lineLimit(1)
                 // Metadata for the post
-                HStack {
-                    ForEach([("arrow.up", "\(post.score)"), ("text.bubble", "\(post.num_comments)"), ("clock", "\(timeSince(post.created))")], id: \.0) { item in
-                        Group {
-                            Image(systemName: item.0)
-                                .resizable()
-                                .frame(width: 10.0, height: 10.0)
-                            Text(item.1)
-                                .font(.caption)
-                        }
-                    }
-                }
-                .opacity(0.75)
+                MetadataView(post: post, spaced: false)
+                    .font(.caption)
+                    .opacity(0.75)
             }
         }
     }

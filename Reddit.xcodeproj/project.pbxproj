@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26746F0B22ECD4DC00A57918 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0A22ECD4DC00A57918 /* CommentsView.swift */; };
 		26746F0F22ECD94B00A57918 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0E22ECD94B00A57918 /* Comment.swift */; };
 		267E3D9B22ECED9C00675AC7 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E3D9A22ECED9C00675AC7 /* Helpers.swift */; };
-		267F145B22EE8720009FAF2D /* Json in Frameworks */ = {isa = PBXBuildFile; productRef = 267F145A22EE8720009FAF2D /* Json */; };
-		267F145D22EE8720009FAF2D /* Request in Frameworks */ = {isa = PBXBuildFile; productRef = 267F145C22EE8720009FAF2D /* Request */; };
 		26B69D1822E51451001AD18F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1722E51451001AD18F /* Post.swift */; };
 		26B69D1A22E51E96001AD18F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1922E51E96001AD18F /* Listing.swift */; };
 		26B69D1D22E52B7F001AD18F /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1C22E52B7F001AD18F /* PostView.swift */; };
-		26B69D1F22E52C05001AD18F /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1E22E52C05001AD18F /* SpinnerView.swift */; };
 		26B69D2122E53213001AD18F /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D2022E53213001AD18F /* SortBy.swift */; };
 		26BBF27122E66EAD006CC669 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BBF27022E66EAD006CC669 /* PostDetailView.swift */; };
 		26C1D7F522E33FD30057DED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1D7F422E33FD30057DED1 /* AppDelegate.swift */; };
@@ -24,8 +20,79 @@
 		26C1D7FB22E33FD40057DED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FA22E33FD40057DED1 /* Assets.xcassets */; };
 		26C1D7FE22E33FD40057DED1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */; };
 		26C1D80122E33FD40057DED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FF22E33FD40057DED1 /* LaunchScreen.storyboard */; };
-		26EB4F6022EE530A00FB7015 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB4F5F22EE530A00FB7015 /* WebView.swift */; };
+		B5145A1F22EFD4E6009237BD /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0A22ECD4DC00A57918 /* CommentsView.swift */; };
+		B5145A2122EFD557009237BD /* MetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E60CB522EFD2A000A0075B /* MetadataView.swift */; };
+		B5145A2622EFD7CF009237BD /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5145A2522EFD7CF009237BD /* CommentsView.swift */; };
+		B538997122EFB0CD0008A937 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538996F22EFB0CD0008A937 /* SpinnerView.swift */; };
+		B538997222EFB0CD0008A937 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538997022EFB0CD0008A937 /* WebView.swift */; };
+		B574DF0C22EFB53B00A80981 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B574DF0B22EFB53B00A80981 /* PostView.swift */; };
+		B5A7594822EE8EBA001FD4F1 /* Json in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7594722EE8EBA001FD4F1 /* Json */; };
+		B5A7594A22EE8EBA001FD4F1 /* Request in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7594922EE8EBA001FD4F1 /* Request */; };
+		B5A7595C22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5A7596222EF97D6001FD4F1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A7596022EF97D6001FD4F1 /* Interface.storyboard */; };
+		B5A7596422EF97D8001FD4F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A7596322EF97D8001FD4F1 /* Assets.xcassets */; };
+		B5A7596B22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5A7597022EF97D8001FD4F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7596F22EF97D8001FD4F1 /* ContentView.swift */; };
+		B5A7597222EF97D8001FD4F1 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7597122EF97D8001FD4F1 /* HostingController.swift */; };
+		B5A7597422EF97D8001FD4F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7597322EF97D8001FD4F1 /* ExtensionDelegate.swift */; };
+		B5A7597622EF97D8001FD4F1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7597522EF97D8001FD4F1 /* NotificationController.swift */; };
+		B5A7597822EF97D8001FD4F1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7597722EF97D8001FD4F1 /* NotificationView.swift */; };
+		B5A7597A22EF97D9001FD4F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A7597922EF97D9001FD4F1 /* Assets.xcassets */; };
+		B5A7597D22EF97D9001FD4F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A7597C22EF97D9001FD4F1 /* Preview Assets.xcassets */; };
+		B5A7598B22EFA627001FD4F1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1722E51451001AD18F /* Post.swift */; };
+		B5A7598C22EFA627001FD4F1 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D1922E51E96001AD18F /* Listing.swift */; };
+		B5A7598D22EFA627001FD4F1 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B69D2022E53213001AD18F /* SortBy.swift */; };
+		B5A7598E22EFA627001FD4F1 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0E22ECD94B00A57918 /* Comment.swift */; };
+		B5A7598F22EFA627001FD4F1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267E3D9A22ECED9C00675AC7 /* Helpers.swift */; };
+		B5A7599622EFA696001FD4F1 /* Json in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7599522EFA696001FD4F1 /* Json */; };
+		B5A7599822EFA696001FD4F1 /* Request in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7599722EFA696001FD4F1 /* Request */; };
+		B5A7599B22EFA797001FD4F1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7599A22EFA797001FD4F1 /* WebView.swift */; };
+		B5A7599D22EFAAF0001FD4F1 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */; };
+		B5E60CB322EFCC5500A0075B /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E60CB222EFCC5500A0075B /* PostDetailView.swift */; };
+		B5E60CB722EFD2FB00A0075B /* MetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E60CB522EFD2A000A0075B /* MetadataView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5A7595D22EF97D6001FD4F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26C1D7E922E33FD30057DED1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5A7595A22EF97D6001FD4F1;
+			remoteInfo = "Reddit-watchOS WatchKit App";
+		};
+		B5A7596C22EF97D8001FD4F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26C1D7E922E33FD30057DED1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5A7596922EF97D8001FD4F1;
+			remoteInfo = "Reddit-watchOS WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5A7598322EF97D9001FD4F1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5A7596B22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7598722EF97D9001FD4F1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B5A7595C22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		26746F0A22ECD4DC00A57918 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
@@ -34,7 +101,6 @@
 		26B69D1722E51451001AD18F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		26B69D1922E51E96001AD18F /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		26B69D1C22E52B7F001AD18F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		26B69D1E22E52C05001AD18F /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		26B69D2022E53213001AD18F /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 		26BBF27022E66EAD006CC669 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		26C1D7F122E33FD30057DED1 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +111,30 @@
 		26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26C1D80022E33FD40057DED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26C1D80222E33FD40057DED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26EB4F5F22EE530A00FB7015 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B5145A2522EFD7CF009237BD /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		B538996F22EFB0CD0008A937 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		B538997022EFB0CD0008A937 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B574DF0B22EFB53B00A80981 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostView.swift"; sourceTree = "<group>"; };
+		B5A7595522EF96F6001FD4F1 /* Reddit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reddit.entitlements; sourceTree = "<group>"; };
+		B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit-watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A7596122EF97D6001FD4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B5A7596322EF97D8001FD4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5A7596522EF97D8001FD4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Reddit-watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A7596F22EF97D8001FD4F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5A7597122EF97D8001FD4F1 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		B5A7597322EF97D8001FD4F1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B5A7597522EF97D8001FD4F1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B5A7597722EF97D8001FD4F1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		B5A7597922EF97D9001FD4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5A7597C22EF97D9001FD4F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5A7597E22EF97D9001FD4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A7597F22EF97D9001FD4F1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B5A7599A22EFA797001FD4F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/WebView.swift"; sourceTree = "<group>"; };
+		B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpinnerView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/SpinnerView.swift"; sourceTree = "<group>"; };
+		B5E60CB222EFCC5500A0075B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostDetailView.swift"; sourceTree = "<group>"; };
+		B5E60CB522EFD2A000A0075B /* MetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetadataView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Shared/Views/MetadataView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,23 +142,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				267F145D22EE8720009FAF2D /* Request in Frameworks */,
-				267F145B22EE8720009FAF2D /* Json in Frameworks */,
+				B5A7594A22EE8EBA001FD4F1 /* Request in Frameworks */,
+				B5A7594822EE8EBA001FD4F1 /* Json in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7596722EF97D8001FD4F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7599822EFA696001FD4F1 /* Request in Frameworks */,
+				B5A7599622EFA696001FD4F1 /* Json in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26746F1022ECE5DD00A57918 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				26B69D1E22E52C05001AD18F /* SpinnerView.swift */,
-				26EB4F5F22EE530A00FB7015 /* WebView.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		26B69D1622E51448001AD18F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,22 +171,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		26B69D1B22E52B73001AD18F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				26746F1022ECE5DD00A57918 /* Helper */,
-				26B69D1C22E52B7F001AD18F /* PostView.swift */,
-				26BBF27022E66EAD006CC669 /* PostDetailView.swift */,
-				26746F0A22ECD4DC00A57918 /* CommentsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		26C1D7E822E33FD30057DED1 = {
 			isa = PBXGroup;
 			children = (
+				B511A2EB22EE8A2D0062B8D4 /* Shared */,
 				26C1D7F322E33FD30057DED1 /* Reddit */,
+				B5A7595F22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */,
+				B5A7596E22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension */,
 				26C1D7F222E33FD30057DED1 /* Products */,
+				B511A2FC22EE8C470062B8D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				26C1D7F122E33FD30057DED1 /* Reddit.app */,
+				B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */,
+				B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */,
+				B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,8 +197,9 @@
 		26C1D7F322E33FD30057DED1 /* Reddit */ = {
 			isa = PBXGroup;
 			children = (
-				26B69D1622E51448001AD18F /* Models */,
-				26B69D1B22E52B73001AD18F /* Views */,
+				B574DF0922EFB51B00A80981 /* Views */,
+				B511A2ED22EE8AA00062B8D4 /* Representable */,
+				B5A7595522EF96F6001FD4F1 /* Reddit.entitlements */,
 				26C1D7F422E33FD30057DED1 /* AppDelegate.swift */,
 				26C1D7F622E33FD30057DED1 /* SceneDelegate.swift */,
 				26C1D7F822E33FD30057DED1 /* ContentView.swift */,
@@ -133,6 +219,104 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B511A2EB22EE8A2D0062B8D4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				26B69D1622E51448001AD18F /* Models */,
+				B511A2EC22EE8A900062B8D4 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B511A2EC22EE8A900062B8D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5E60CB522EFD2A000A0075B /* MetadataView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B511A2ED22EE8AA00062B8D4 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				B538996F22EFB0CD0008A937 /* SpinnerView.swift */,
+				B538997022EFB0CD0008A937 /* WebView.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		B511A2FC22EE8C470062B8D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B574DF0922EFB51B00A80981 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26B69D1C22E52B7F001AD18F /* PostView.swift */,
+				26BBF27022E66EAD006CC669 /* PostDetailView.swift */,
+				26746F0A22ECD4DC00A57918 /* CommentsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B574DF0A22EFB52E00A80981 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B574DF0B22EFB53B00A80981 /* PostView.swift */,
+				B5E60CB222EFCC5500A0075B /* PostDetailView.swift */,
+				B5145A2522EFD7CF009237BD /* CommentsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5A7595F22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				B5A7596022EF97D6001FD4F1 /* Interface.storyboard */,
+				B5A7596322EF97D8001FD4F1 /* Assets.xcassets */,
+				B5A7596522EF97D8001FD4F1 /* Info.plist */,
+			);
+			path = "Reddit-watchOS WatchKit App";
+			sourceTree = "<group>";
+		};
+		B5A7596E22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B574DF0A22EFB52E00A80981 /* Views */,
+				B5A7599922EFA73B001FD4F1 /* Representable */,
+				B5A7596F22EF97D8001FD4F1 /* ContentView.swift */,
+				B5A7597122EF97D8001FD4F1 /* HostingController.swift */,
+				B5A7597322EF97D8001FD4F1 /* ExtensionDelegate.swift */,
+				B5A7597522EF97D8001FD4F1 /* NotificationController.swift */,
+				B5A7597722EF97D8001FD4F1 /* NotificationView.swift */,
+				B5A7597922EF97D9001FD4F1 /* Assets.xcassets */,
+				B5A7597E22EF97D9001FD4F1 /* Info.plist */,
+				B5A7597F22EF97D9001FD4F1 /* PushNotificationPayload.apns */,
+				B5A7597B22EF97D9001FD4F1 /* Preview Content */,
+			);
+			path = "Reddit-watchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B5A7597B22EF97D9001FD4F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5A7597C22EF97D9001FD4F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5A7599922EFA73B001FD4F1 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				B5A7599A22EFA797001FD4F1 /* WebView.swift */,
+				B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,12 +334,67 @@
 			);
 			name = Reddit;
 			packageProductDependencies = (
-				267F145A22EE8720009FAF2D /* Json */,
-				267F145C22EE8720009FAF2D /* Request */,
+				B5A7594722EE8EBA001FD4F1 /* Json */,
+				B5A7594922EE8EBA001FD4F1 /* Request */,
 			);
 			productName = Reddit;
 			productReference = 26C1D7F122E33FD30057DED1 /* Reddit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B5A7595722EF97D6001FD4F1 /* Reddit-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5A7598822EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS" */;
+			buildPhases = (
+				B5A7595622EF97D6001FD4F1 /* Resources */,
+				B5A7598722EF97D9001FD4F1 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5A7595E22EF97D6001FD4F1 /* PBXTargetDependency */,
+			);
+			name = "Reddit-watchOS";
+			productName = "Reddit-watchOS";
+			productReference = B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		B5A7595A22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5A7598422EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS WatchKit App" */;
+			buildPhases = (
+				B5A7595922EF97D6001FD4F1 /* Resources */,
+				B5A7598322EF97D9001FD4F1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5A7596D22EF97D8001FD4F1 /* PBXTargetDependency */,
+			);
+			name = "Reddit-watchOS WatchKit App";
+			productName = "Reddit-watchOS WatchKit App";
+			productReference = B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B5A7596922EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5A7598022EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS WatchKit Extension" */;
+			buildPhases = (
+				B5A7596622EF97D8001FD4F1 /* Sources */,
+				B5A7596722EF97D8001FD4F1 /* Frameworks */,
+				B5A7596822EF97D8001FD4F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reddit-watchOS WatchKit Extension";
+			packageProductDependencies = (
+				B5A7599522EFA696001FD4F1 /* Json */,
+				B5A7599722EFA696001FD4F1 /* Request */,
+			);
+			productName = "Reddit-watchOS WatchKit Extension";
+			productReference = B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -170,6 +409,15 @@
 					26C1D7F022E33FD30057DED1 = {
 						CreatedOnToolsVersion = 11.0;
 					};
+					B5A7595722EF97D6001FD4F1 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					B5A7595A22EF97D6001FD4F1 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					B5A7596922EF97D8001FD4F1 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 26C1D7EC22E33FD30057DED1 /* Build configuration list for PBXProject "Reddit" */;
@@ -182,13 +430,16 @@
 			);
 			mainGroup = 26C1D7E822E33FD30057DED1;
 			packageReferences = (
-				267F145922EE8720009FAF2D /* XCRemoteSwiftPackageReference "swift-request" */,
+				B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */,
 			);
 			productRefGroup = 26C1D7F222E33FD30057DED1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				26C1D7F022E33FD30057DED1 /* Reddit */,
+				B5A7595722EF97D6001FD4F1 /* Reddit-watchOS */,
+				B5A7595A22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */,
+				B5A7596922EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +452,31 @@
 				26C1D80122E33FD40057DED1 /* LaunchScreen.storyboard in Resources */,
 				26C1D7FE22E33FD40057DED1 /* Preview Assets.xcassets in Resources */,
 				26C1D7FB22E33FD40057DED1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7595622EF97D6001FD4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7595922EF97D6001FD4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7596422EF97D8001FD4F1 /* Assets.xcassets in Resources */,
+				B5A7596222EF97D6001FD4F1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7596822EF97D8001FD4F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7597D22EF97D9001FD4F1 /* Preview Assets.xcassets in Resources */,
+				B5A7597A22EF97D9001FD4F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,17 +493,54 @@
 				26B69D2122E53213001AD18F /* SortBy.swift in Sources */,
 				26B69D1A22E51E96001AD18F /* Listing.swift in Sources */,
 				26C1D7F922E33FD30057DED1 /* ContentView.swift in Sources */,
+				B5145A1F22EFD4E6009237BD /* CommentsView.swift in Sources */,
+				B538997222EFB0CD0008A937 /* WebView.swift in Sources */,
+				B5E60CB722EFD2FB00A0075B /* MetadataView.swift in Sources */,
+				B538997122EFB0CD0008A937 /* SpinnerView.swift in Sources */,
 				26746F0F22ECD94B00A57918 /* Comment.swift in Sources */,
 				26B69D1D22E52B7F001AD18F /* PostView.swift in Sources */,
 				26B69D1822E51451001AD18F /* Post.swift in Sources */,
 				267E3D9B22ECED9C00675AC7 /* Helpers.swift in Sources */,
-				26746F0B22ECD4DC00A57918 /* CommentsView.swift in Sources */,
-				26B69D1F22E52C05001AD18F /* SpinnerView.swift in Sources */,
-				26EB4F6022EE530A00FB7015 /* WebView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A7596622EF97D8001FD4F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A7597222EF97D8001FD4F1 /* HostingController.swift in Sources */,
+				B5A7599D22EFAAF0001FD4F1 /* SpinnerView.swift in Sources */,
+				B5145A2622EFD7CF009237BD /* CommentsView.swift in Sources */,
+				B5A7598C22EFA627001FD4F1 /* Listing.swift in Sources */,
+				B5A7598D22EFA627001FD4F1 /* SortBy.swift in Sources */,
+				B5A7598F22EFA627001FD4F1 /* Helpers.swift in Sources */,
+				B5A7597022EF97D8001FD4F1 /* ContentView.swift in Sources */,
+				B5A7597622EF97D8001FD4F1 /* NotificationController.swift in Sources */,
+				B5A7598B22EFA627001FD4F1 /* Post.swift in Sources */,
+				B5A7597422EF97D8001FD4F1 /* ExtensionDelegate.swift in Sources */,
+				B5145A2122EFD557009237BD /* MetadataView.swift in Sources */,
+				B5A7598E22EFA627001FD4F1 /* Comment.swift in Sources */,
+				B5A7597822EF97D8001FD4F1 /* NotificationView.swift in Sources */,
+				B5E60CB322EFCC5500A0075B /* PostDetailView.swift in Sources */,
+				B574DF0C22EFB53B00A80981 /* PostView.swift in Sources */,
+				B5A7599B22EFA797001FD4F1 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5A7595E22EF97D6001FD4F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5A7595A22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */;
+			targetProxy = B5A7595D22EF97D6001FD4F1 /* PBXContainerItemProxy */;
+		};
+		B5A7596D22EF97D8001FD4F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5A7596922EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension */;
+			targetProxy = B5A7596C22EF97D8001FD4F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		26C1D7FF22E33FD40057DED1 /* LaunchScreen.storyboard */ = {
@@ -236,6 +549,14 @@
 				26C1D80022E33FD40057DED1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5A7596022EF97D6001FD4F1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5A7596122EF97D6001FD4F1 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -359,7 +680,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Reddit/Reddit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "Reddit/Preview\\ Content";
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				ENABLE_PREVIEWS = YES;
@@ -370,6 +694,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carsonkatri.Reddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,7 +704,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Reddit/Reddit.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "Reddit/Preview\\ Content";
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				ENABLE_PREVIEWS = YES;
@@ -390,8 +718,121 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carsonkatri.Reddit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5A7598122EF97D9001FD4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Reddit-watchOS WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Reddit-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		B5A7598222EF97D9001FD4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Reddit-watchOS WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Reddit-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		B5A7598522EF97D9001FD4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				IBSC_MODULE = Reddit_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "Reddit-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		B5A7598622EF97D9001FD4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				IBSC_MODULE = Reddit_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "Reddit-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		B5A7598922EF97D9001FD4F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B5A7598A22EF97D9001FD4F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FH9CW55WY5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -416,28 +857,65 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B5A7598022EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A7598122EF97D9001FD4F1 /* Debug */,
+				B5A7598222EF97D9001FD4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5A7598422EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A7598522EF97D9001FD4F1 /* Debug */,
+				B5A7598622EF97D9001FD4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5A7598822EF97D9001FD4F1 /* Build configuration list for PBXNativeTarget "Reddit-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A7598922EF97D9001FD4F1 /* Debug */,
+				B5A7598A22EF97D9001FD4F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		267F145922EE8720009FAF2D /* XCRemoteSwiftPackageReference "swift-request" */ = {
+		B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/carson-katri/swift-request";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		267F145A22EE8720009FAF2D /* Json */ = {
+		B5A7594722EE8EBA001FD4F1 /* Json */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 267F145922EE8720009FAF2D /* XCRemoteSwiftPackageReference "swift-request" */;
+			package = B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */;
 			productName = Json;
 		};
-		267F145C22EE8720009FAF2D /* Request */ = {
+		B5A7594922EE8EBA001FD4F1 /* Request */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 267F145922EE8720009FAF2D /* XCRemoteSwiftPackageReference "swift-request" */;
+			package = B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */;
+			productName = Request;
+		};
+		B5A7599522EFA696001FD4F1 /* Json */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */;
+			productName = Json;
+		};
+		B5A7599722EFA696001FD4F1 /* Request */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5A7594622EE8EBA001FD4F1 /* XCRemoteSwiftPackageReference "swift-request" */;
 			productName = Request;
 		};
 /* End XCSwiftPackageProductDependency section */
