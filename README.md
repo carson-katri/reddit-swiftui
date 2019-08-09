@@ -1,4 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/13581484/62501612-9e0d1100-b7b9-11e9-9c3e-7529a5c141d9.jpeg" /></p>
+<p align="center"><img src="Resources/banner.jpeg" /></p>
 <h2 align="center">A cross-platform Reddit client created in SwiftUI.</h2>
 
 > *Note:* This project is far from complete. It still lacks many features of your typical Reddit client and has bugs (partly due to SwiftUI, but I'll take credit for some of them)
