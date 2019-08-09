@@ -21,11 +21,12 @@ struct PostDetailView: View {
             Text(post.title)
                 .font(.system(size: 21))
                 .bold()
-                .frame(idealHeight: .infinity)
             Text(post.selftext)
             
             MetadataView(post: post, spaced: true)
                 .font(.system(size: 10))
+                .foregroundColor(.white)
+                .lineLimit(1)
             
             CommentsView(post: post)
         }
@@ -36,7 +37,7 @@ struct PostDetailView: View {
 #if DEBUG
 struct PostDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created: Date().timeIntervalSince1970, preview: nil, replies: nil))
+        PostDetailView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970, preview: nil, replies: nil))
     }
 }
 #endif

@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum SortBy: String {
+/// Sorting method for Reddit API
+enum SortBy: String, CaseIterable {
     case hot
     case new
     case controversial

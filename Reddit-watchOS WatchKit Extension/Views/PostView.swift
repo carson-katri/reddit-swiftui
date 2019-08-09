@@ -28,9 +28,11 @@ struct PostView: View {
                             .rotationEffect(Angle(degrees: 45))
                     }
                     Text(post.title)
+                        .lineLimit(1)
                 }
                 Text(post.selftext)
                     .foregroundColor(.gray)
+                    .lineLimit(1)
             }
         }
         .padding([.top, .bottom])
@@ -40,7 +42,7 @@ struct PostView: View {
 #if DEBUG
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created: Date().timeIntervalSince1970, preview: nil, replies: nil))
+        PostView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970, preview: nil, replies: nil))
     }
 }
 #endif

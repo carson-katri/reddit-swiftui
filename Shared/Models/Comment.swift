@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A comment from the Reddit API
 struct Comment: Decodable {
     let id: String
     let author: String

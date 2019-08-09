@@ -14,7 +14,7 @@ struct MetadataView: View {
     
     var stickied: some View {
         Group {
-            // Pinned icon
+            /// Pinned icon
             if post.stickied {
                 Image(systemName: "pin.fill")
                     .rotationEffect(Angle(degrees: 45))
@@ -27,12 +27,14 @@ struct MetadataView: View {
     }
     
     var body: some View {
+        /// Spacers are placed to fill the width of the screen if desired
         HStack {
             if spaced {
                 Spacer()
             }
             stickied
-            ForEach([("arrow.up", "\(post.score)", Color.orange), ("text.bubble", "\(post.num_comments)", Color("text")), ("clock", "\(timeSince(post.created))", Color("text"))], id: \.0) { data in
+            /// Tuples store the SF Symbols, text, and color
+            ForEach([("arrow.up", "\(post.score)", Color.orange), ("text.bubble", "\(post.num_comments)", Color.primary), ("clock", "\(timeSince(post.created_utc))", Color.primary)], id: \.0) { data in
                 Group {
                     Image(systemName: data.0)
                     Text(data.1)
@@ -49,7 +51,7 @@ struct MetadataView: View {
 #if DEBUG
 struct MetadataView_Previews: PreviewProvider {
     static var previews: some View {
-        MetadataView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created: Date().timeIntervalSince1970, preview: nil, replies: nil), spaced: true)
+        MetadataView(post: Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970, preview: nil, replies: nil), spaced: true)
         .font(.system(size: 10))
     }
 }

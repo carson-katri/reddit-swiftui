@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Root of Reddit API response
 struct Listing: Decodable {
     let data: ListingData
     
@@ -20,6 +21,7 @@ struct Listing: Decodable {
     }
 }
 
+/// Root of Reddit API response for comments
 struct CommentListing: Decodable {
     let data: CommentListingData
     

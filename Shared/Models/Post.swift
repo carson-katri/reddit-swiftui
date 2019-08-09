@@ -8,10 +8,12 @@
 
 import Foundation
 
+/// A post from the Reddit API
 struct Post: Decodable, Identifiable {
     let title: String
     let name: String
     let id: String
+    /// The body of the post
     let selftext: String
     let selftext_html: String?
     let thumbnail: String
@@ -21,7 +23,7 @@ struct Post: Decodable, Identifiable {
     let score: Int
     let num_comments: Int
     let stickied: Bool
-    let created: Double
+    let created_utc: Double
     let preview: Preview?
     
     let replies: [Self]?
