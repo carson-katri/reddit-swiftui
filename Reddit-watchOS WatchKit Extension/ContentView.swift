@@ -53,7 +53,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         List([0, 1, 2], id: \.self) { item in
-            PostView(post: Post(title: "Hello World", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970, preview: nil, replies: nil))
+            PostView(post: Post(title: "Hello World", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970, preview: nil, link_flair_text: "Hello World", is_original_content: true, spoiler: false, replies: nil))
         }
             .listStyle(CarouselListStyle())
     }

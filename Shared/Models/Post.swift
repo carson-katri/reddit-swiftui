@@ -26,6 +26,24 @@ struct Post: Decodable, Identifiable {
     let created_utc: Double
     let preview: Preview?
     
+    let link_flair_text: String?
+    let is_original_content: Bool
+    let spoiler: Bool
+    
+    var flairs: [String] {
+        var res: [String] = []
+        if link_flair_text != nil {
+            res.append(link_flair_text!)
+        }
+        if is_original_content {
+            res.append("OC")
+        }
+        if spoiler {
+            res.append("Spoiler")
+        }
+        return res
+    }
+    
     let replies: [Self]?
     
     struct Preview: Decodable {
