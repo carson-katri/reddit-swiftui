@@ -57,6 +57,9 @@
 		B5712BAE22F2731600DFF152 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5712BAD22F2731600DFF152 /* PostList.swift */; };
 		B5712BB022F2807800DFF152 /* ContentViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5712BAF22F2807800DFF152 /* ContentViewState.swift */; };
 		B574DF0C22EFB53B00A80981 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B574DF0B22EFB53B00A80981 /* PostView.swift */; };
+		B57D131A22FD8F3500E7642E /* FlairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D131922FD8F3500E7642E /* FlairView.swift */; };
+		B57D131B22FD8F3A00E7642E /* FlairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D131922FD8F3500E7642E /* FlairView.swift */; };
+		B57D131C22FD8F3B00E7642E /* FlairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57D131922FD8F3500E7642E /* FlairView.swift */; };
 		B597CBA022FCC86200389DF6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B597CB9F22FCC86200389DF6 /* SettingsView.swift */; };
 		B5A7594822EE8EBA001FD4F1 /* Json in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7594722EE8EBA001FD4F1 /* Json */; };
 		B5A7594A22EE8EBA001FD4F1 /* Request in Frameworks */ = {isa = PBXBuildFile; productRef = B5A7594922EE8EBA001FD4F1 /* Request */; };
@@ -166,6 +169,7 @@
 		B5712BAD22F2731600DFF152 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		B5712BAF22F2807800DFF152 /* ContentViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewState.swift; sourceTree = "<group>"; };
 		B574DF0B22EFB53B00A80981 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostView.swift"; sourceTree = "<group>"; };
+		B57D131922FD8F3500E7642E /* FlairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairView.swift; sourceTree = "<group>"; };
 		B597CB9F22FCC86200389DF6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B59DE46B22F8CBD800D8BD1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5A7595822EF97D6001FD4F1 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +322,7 @@
 				26BBF27022E66EAD006CC669 /* PostDetailView.swift */,
 				26746F0A22ECD4DC00A57918 /* CommentsView.swift */,
 				B5E60CB522EFD2A000A0075B /* MetadataView.swift */,
+				B57D131922FD8F3500E7642E /* FlairView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57D131A22FD8F3500E7642E /* FlairView.swift in Sources */,
 				26BBF27122E66EAD006CC669 /* PostDetailView.swift in Sources */,
 				B5712BA422F2622500DFF152 /* PostList.swift in Sources */,
 				26C1D7F522E33FD30057DED1 /* AppDelegate.swift in Sources */,
@@ -713,6 +719,7 @@
 				B51542EB22F25C05000ADC16 /* PostView.swift in Sources */,
 				B561DE3622F3965E003AB95B /* API.swift in Sources */,
 				B51542EF22F25C23000ADC16 /* WebView.swift in Sources */,
+				B57D131C22FD8F3B00E7642E /* FlairView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57D131B22FD8F3A00E7642E /* FlairView.swift in Sources */,
 				B5A7597222EF97D8001FD4F1 /* HostingController.swift in Sources */,
 				B5A7599D22EFAAF0001FD4F1 /* SpinnerView.swift in Sources */,
 				B5145A2622EFD7CF009237BD /* CommentsView.swift in Sources */,

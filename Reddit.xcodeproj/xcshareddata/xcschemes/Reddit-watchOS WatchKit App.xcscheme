@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B5A7595722EF97D6001FD4F1"
-               BuildableName = "Reddit-watchOS.app"
+               BuildableName = "Reddit.app"
                BlueprintName = "Reddit-watchOS"
                ReferencedContainer = "container:Reddit.xcodeproj">
             </BuildableReference>
