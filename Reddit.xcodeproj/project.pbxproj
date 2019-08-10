@@ -190,7 +190,7 @@
 		B5A7599A22EFA797001FD4F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/WebView.swift"; sourceTree = "<group>"; };
 		B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpinnerView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/SpinnerView.swift"; sourceTree = "<group>"; };
 		B5E60CB222EFCC5500A0075B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostDetailView.swift"; sourceTree = "<group>"; };
-		B5E60CB522EFD2A000A0075B /* MetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MetadataView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Shared/Views/MetadataView.swift"; sourceTree = "<group>"; };
+		B5E60CB522EFD2A000A0075B /* MetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
