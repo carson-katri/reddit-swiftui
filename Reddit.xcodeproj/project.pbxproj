@@ -168,7 +168,7 @@
 		B5712BA222F261F100DFF152 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		B5712BAD22F2731600DFF152 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		B5712BAF22F2807800DFF152 /* ContentViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewState.swift; sourceTree = "<group>"; };
-		B574DF0B22EFB53B00A80981 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostView.swift"; sourceTree = "<group>"; };
+		B574DF0B22EFB53B00A80981 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		B57D131922FD8F3500E7642E /* FlairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairView.swift; sourceTree = "<group>"; };
 		B597CB9F22FCC86200389DF6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B59DE46B22F8CBD800D8BD1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -187,9 +187,9 @@
 		B5A7597C22EF97D9001FD4F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5A7597E22EF97D9001FD4F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5A7597F22EF97D9001FD4F1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		B5A7599A22EFA797001FD4F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/WebView.swift"; sourceTree = "<group>"; };
-		B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpinnerView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Representable/SpinnerView.swift"; sourceTree = "<group>"; };
-		B5E60CB222EFCC5500A0075B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostDetailView.swift; path = "../../../../../../../System/Volumes/Data/Users/carson/Desktop/Apps/reddit-swiftui/Reddit-watchOS WatchKit Extension/Views/PostDetailView.swift"; sourceTree = "<group>"; };
+		B5A7599A22EFA797001FD4F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B5A7599C22EFAAF0001FD4F1 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		B5E60CB222EFCC5500A0075B /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		B5E60CB522EFD2A000A0075B /* MetadataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
