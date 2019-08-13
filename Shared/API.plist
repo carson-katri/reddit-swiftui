@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>scope</key>
-	<string></string>
-	<key>redirectURI</key>
+	<string>identity,vote</string>
+	<key>redirectUri</key>
 	<string></string>
 	<key>clientId</key>
 	<string></string>
