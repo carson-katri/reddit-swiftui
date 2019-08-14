@@ -11,6 +11,10 @@ import Request
 
 struct PostDetailView: View {
     let post: Post
+    @State private var comment: String = ""
+    #if os(iOS)
+    @EnvironmentObject private var keyboardObserver: KeyboardObserver
+    #endif
     
     var title: some View {
         let vstack = VStack(alignment: .leading) {
@@ -25,39 +29,54 @@ struct PostDetailView: View {
         return vstack
         #elseif os(macOS)
         /// Fill window width
-        return vstack.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading)
+        return vstack.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
         #endif
     }
     
     var body: some View {
-        let list = List {
-            // Image
-            if post.url.contains(".jpg") || post.url.contains(".png") {
-                RequestImage(Url(post.url), contentMode: .fit)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading)
-            }
-            // GIF
-            if post.url.contains(".gif") {
-                WebView(url: URL(string: post.url)!)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading)
-            }
-            // Title
-            if post.selftext == "" {
-                NavigationLink(destination: WebView(url: URL(string: post.url)!)) {
+        let list = ZStack(alignment: Alignment.bottomLeading) {
+            List {
+                // Image
+                if post.url.contains(".jpg") || post.url.contains(".png") {
+                    RequestImage(Url(post.url), contentMode: .fit)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                }
+                // GIF
+                if post.url.contains(".gif") {
+                    WebView(url: URL(string: post.url)!)
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                }
+                // Title
+                if post.selftext == "" {
+                    NavigationLink(destination: WebView(url: URL(string: post.url)!)) {
+                        title
+                    }
+                } else {
                     title
                 }
-            } else {
-                title
+                // Body
+                if post.selftext != "" {
+                    Text(post.selftext)
+                }
+                if post.flairs.count > 0 {
+                    FlairView(flairs: post.flairs)
+                }
+                MetadataView(post: post, spaced: true)
+                CommentsView(post: post)
             }
-            // Body
-            if post.selftext != "" {
-                Text(post.selftext)
+            .padding(.bottom, 40)
+            /// Comment text field
+            #if os(macOS)
+            AddCommentView(text: $comment) { text in
+                API.default.comment(text, on: self.post.id)
             }
-            if post.flairs.count > 0 {
-                FlairView(flairs: post.flairs)
+            #else
+            AddCommentView(text: $comment) { text in
+                API.default.comment(text, on: self.post.id)
             }
-            MetadataView(post: post, spaced: true)
-            CommentsView(post: post)
+            .offset(y: keyboardObserver.keyboardHeight > 0 ? -(keyboardObserver.keyboardHeight - 50) : 0)
+            .animation(.spring())
+            #endif
         }
         #if os(iOS)
         return list.navigationBarTitle(Text("r/\(post.subreddit)"), displayMode: .inline)

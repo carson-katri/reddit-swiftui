@@ -18,7 +18,7 @@ struct PostList: View {
             Section(header: Text("\(subreddit) | \(sortBy.rawValue)")) {
                 /// Load posts from web and decode as `Listing`
                 RequestView(Listing.self, Request {
-                    Url(API.subredditURL(subreddit, sortBy))
+                    Url(API.default.subredditURL(subreddit, sortBy))
                     Query(["raw_json":"1"])
                 }) { listing in
                     /// List of `PostView`s when loaded

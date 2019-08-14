@@ -5,6 +5,9 @@
 
 To show off SwiftUI's strength in cross-platform development, I did **not** use Mac Catalyst for this project. Instead, common UI code is shared between iOS, macOS, and watchOS.
 
+## Setup
+To use this app, you need to create an app for the Reddit api. You can do that [here](https://www.reddit.com/prefs/apps). Choose "Installed app", and set the redirect URI to `redditswiftui://oauth_callback`
+
 ## Project Structure
 * `Shared` - Models, helpers, API, and any shared Views.
 * `Reddit-[PLATFORM]` - Each target folder contains a `Views` and `Representable` folder. `Views` holds platform-specific views, and `Representable` contains `UIViewRepresentables` or `NSViewRepresentables`.

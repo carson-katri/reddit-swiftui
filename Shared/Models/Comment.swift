@@ -14,6 +14,7 @@ struct Comment: Decodable {
     let author: String
     let score: Int
     let body: String?
+    let parent_id: String?
     let replies: CommentListing?
     
     enum CommentKeys: String, CodingKey {
@@ -22,6 +23,7 @@ struct Comment: Decodable {
         case score
         case body
         case replies
+        case parent_id
     }
     
     init(from decoder: Decoder) throws {
@@ -30,6 +32,7 @@ struct Comment: Decodable {
         author = try values.decode(String.self, forKey: .author)
         score = try values.decode(Int.self, forKey: .score)
         body = try? values.decode(String.self, forKey: .body)
+        parent_id = try? values.decode(String.self, forKey: .parent_id)
         
         if let replies = try? values.decode(CommentListing.self, forKey: .replies) {
             self.replies = replies

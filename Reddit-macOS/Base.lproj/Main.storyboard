@@ -54,6 +54,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Account" id="TCf-aa-yf9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Account" id="Paz-B0-DZB">
+                                    <items>
+                                        <menuItem title="Login..." keyEquivalent="l" id="aJ2-Lv-kV7">
+                                            <connections>
+                                                <action selector="login:" target="Voe-Tx-rLC" id="ckO-SQ-f05"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Logout" keyEquivalent="L" id="IRz-8w-ZCs">
+                                            <connections>
+                                                <action selector="logout:" target="Voe-Tx-rLC" id="GCT-Po-fkT"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="File" id="dMs-cI-mzQ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
@@ -673,7 +690,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Reddit_macOS" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Reddit" customModuleProvider="target">
+                    <connections>
+                        <outlet property="loginItem" destination="aJ2-Lv-kV7" id="I0s-3o-3qk"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

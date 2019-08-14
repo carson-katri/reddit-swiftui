@@ -21,9 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         let window = UIWindow(windowScene: scene as! UIWindowScene)
-        window.rootViewController = UIHostingController(rootView: ContentView())
+        window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(KeyboardObserver()))
         self.window = window
         window.makeKeyAndVisible()
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLComponents(string: URLContexts.first!.url.absoluteString) {
+            let state = url.queryItems?.first(where: { $0.name == "state" })?.value ?? ""
+            let code = url.queryItems?.first(where: { $0.name == "code" })?.value ?? ""
+            API.default.saveToken(code, state: state)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

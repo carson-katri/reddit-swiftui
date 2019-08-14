@@ -20,7 +20,7 @@ struct CommentsView: View {
     var body: some View {
         // Load the comments
         RequestView([CommentListing].self, Request {
-            Url(API.postURL(post.subreddit, post.id))
+            Url(API.default.postURL(post.subreddit, post.id))
             Header.Accept(.json)
         }) { listings in
             if listings != nil {
@@ -66,7 +66,7 @@ struct CommentView: View {
                 }
             }
             .padding(.leading, CGFloat(self.nestLevel * 10))
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
             /// Recursive comments
             if comment.replies != nil {
                 ForEach(comment.replies!.data.children.map { $0.data }, id: \.id) { reply in

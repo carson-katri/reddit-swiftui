@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSToolbarDelegate, NSTextFie
     var toolbar: NSToolbar!
     
     @ObservedObject var state = ContentViewState()
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         window = NSWindow(
@@ -36,8 +36,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSToolbarDelegate, NSTextFie
         self.window.toolbar = toolbar
 
         window.makeKeyAndOrderFront(nil)
+        
+        if API.default.loggedIn {
+            loginItem.title = "View Profile"
+        }
     }
-
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        if let url = URLComponents(string: urls.first!.absoluteString) {
+            let state = url.queryItems?.first(where: { $0.name == "state" })?.value ?? ""
+            let code = url.queryItems?.first(where: { $0.name == "code" })?.value ?? ""
+            API.default.saveToken(code, state: state)
+        }
+    }
+    
+    /// OAuth login menu item
+    @IBOutlet weak var loginItem: NSMenuItem!
+    @IBAction func login(_ sender: Any) {
+        let controller = DetailWindowController(rootView: ProfileView(), width: 600, height: 500)
+        controller.window?.title = "Account"
+        controller.showWindow(nil)
+    }
+    @IBAction func logout(_ sender: Any) {
+        API.default.logout()
+    }
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
