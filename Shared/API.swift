@@ -30,16 +30,30 @@ class API {
         }
     }
     
-    func subredditURL(_ subreddit: String, _ sortBy: SortBy) -> String {
-        return "https://www.reddit.com/r/\(subreddit)/\(sortBy.rawValue).json"
+    func posts(_ subreddit: String, _ sortBy: SortBy) -> Request {
+        if loggedIn {
+            return authedRequest("https://oauth.reddit.com/r/\(subreddit)/\(sortBy.rawValue)")
+        } else {
+            return Request {
+                Url("https://www.reddit.com/r/\(subreddit)/\(sortBy.rawValue).json")
+                Query(["raw_json":"1"])
+            }
+        }
     }
     
     func userPostsURL(for username: String) -> String {
         return "https://www.reddit.com/user/\(username)/submitted.json"
     }
     
-    func postURL(_ subreddit: String, _ id: String) -> String {
-        return "https://www.reddit.com/r/\(subreddit)/\(id).json"
+    func post(_ subreddit: String, _ id: String) -> Request {
+        if loggedIn {
+            return authedRequest("https://oauth.reddit.com/r/\(subreddit)/comments/\(id)")
+        } else {
+            return Request {
+                Url("https://www.reddit.com/r/\(subreddit)/\(id).json")
+                Query(["raw_json":"1"])
+            }
+        }
     }
     
     func userCommentsURL(for username: String) -> String {
@@ -143,23 +157,52 @@ class API {
         authedRequest("https://oauth.reddit.com/api/v1/me")
     }
     
-    func comment(_ text: String, on parentId: String) {
+    func comment(_ text: String, on parentId: String, complete: @escaping (() -> Void)) {
         Request {
             Url("https://oauth.reddit.com/api/comment")
             Method(.post)
             Header.Authorization(.bearer(API.default.token!))
-            Body([
+            Query([
                 "api_type": "json",
                 "thing_id": parentId,
                 "text": text
             ])
+            Header.Any(key: "User-Agent", value: "Reddit SwiftUI/v1")
         }
-        .onError { error in
-            print(error)
-        }
-        .onJson { json in
-            print(json)
+        .onData { _ in
+            complete()
         }
         .call()
+    }
+    
+    // MARK: Voting
+    private func vote(_ id: String, direction: Int, complete: @escaping (() -> Void)) {
+        Request {
+            Url("https://oauth.reddit.com/api/vote")
+            Method(.post)
+            Header.Authorization(.bearer(API.default.token!))
+            Query([
+                "id": id,
+                "dir": "\(direction)",
+                "rank": "2"
+            ])
+            Header.Any(key: "User-Agent", value: "Reddit SwiftUI/v1")
+        }
+        .onData { _ in
+            complete()
+        }
+        .call()
+    }
+    
+    func upvote(_ id: String, complete: @escaping (() -> Void)) {
+        vote(id, direction: 1, complete: complete)
+    }
+    
+    func downvote(_ id: String, complete: @escaping (() -> Void)) {
+        vote(id, direction: -1, complete: complete)
+    }
+    
+    func unvote(_ id: String, complete: @escaping (() -> Void)) {
+        vote(id, direction: 0, complete: complete)
     }
 }

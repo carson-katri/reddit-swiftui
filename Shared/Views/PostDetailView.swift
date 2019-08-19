@@ -67,13 +67,9 @@ struct PostDetailView: View {
             .padding(.bottom, 40)
             /// Comment text field
             #if os(macOS)
-            AddCommentView(text: $comment) { text in
-                API.default.comment(text, on: self.post.id)
-            }
+            AddCommentView(text: $comment, parentName: self.post.name)
             #else
-            AddCommentView(text: $comment) { text in
-                API.default.comment(text, on: self.post.id)
-            }
+            AddCommentView(text: $comment, parentName: self.post.name)
             .offset(y: keyboardObserver.keyboardHeight > 0 ? -(keyboardObserver.keyboardHeight - 50) : 0)
             .animation(.spring())
             #endif
@@ -81,7 +77,10 @@ struct PostDetailView: View {
         #if os(iOS)
         return list.navigationBarTitle(Text("r/\(post.subreddit)"), displayMode: .inline)
         #else
-        return list
+        // TODO: Implement `onCommand`
+        return list/*.onCommand(#selector(AppDelegate.upvote(_:))) {
+            print("Command received in View")
+        }*/
         #endif
     }
 }

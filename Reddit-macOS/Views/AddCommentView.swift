@@ -10,14 +10,16 @@ import SwiftUI
 
 struct AddCommentView: View {
     @Binding var text: String
-    let send: ((String) -> ())
+    let parentName: String
     
     var body: some View {
         HStack {
             TextField("Add Comment", text: $text)
                 .cornerRadius(4)
             Button(action: {
-                self.send(self.text)
+                API.default.comment(self.text, on: self.parentName) {
+                    self.text = ""
+                }
             }) {
                 Text("Send")
             }
@@ -30,9 +32,7 @@ struct AddCommentView: View {
 #if DEBUG
 struct AddCommentView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCommentView(text: .constant("")) { comment in
-            
-        }
+        AddCommentView(text: .constant(""), parentName: "t3_helloworld")
             .environment(\.colorScheme, .dark)
     }
 }

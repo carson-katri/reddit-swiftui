@@ -34,6 +34,14 @@ struct ProfileView: View {
                                     }
                                 }
                             }
+                            Section {
+                                Button(action: {
+                                    print("Logout")
+                                    API.default.logout()
+                                }) {
+                                    Text("Logout")
+                                }
+                            }
                         })
                     } else {
                         list = AnyView(SpinnerView())

@@ -19,10 +19,7 @@ struct CommentsView: View {
     
     var body: some View {
         // Load the comments
-        RequestView([CommentListing].self, Request {
-            Url(API.default.postURL(post.subreddit, post.id))
-            Header.Accept(.json)
-        }) { listings in
+        RequestView([CommentListing].self, API.default.post(post.subreddit, post.id)) { listings in
             if listings != nil {
                 // `dropFirst` because `first` is the actual post
                 if listings!.dropFirst().map({ $0.data.children }).flatMap({ $0.map { $0.data } }).count > 0 {
@@ -41,11 +38,11 @@ struct CommentsView: View {
 }
 
 struct CommentView: View {
-    let comment: Comment
+    @State var comment: Comment
     let nestLevel: Int
     
     var body: some View {
-        Group {
+        return Group {
             HStack {
                 /// Left border for nested comments
                 if nestLevel > 0 {
@@ -57,8 +54,7 @@ struct CommentView: View {
                 VStack(alignment: .leading) {
                     HStack {
                         Text(comment.author)
-                        Image(systemName: "arrow.up")
-                        Text("\(comment.score)")
+                        VoteView(votable: $comment)
                     }
                     .font(.caption)
                     .opacity(0.75)

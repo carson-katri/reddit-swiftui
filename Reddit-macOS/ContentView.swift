@@ -15,8 +15,6 @@ struct ContentView : View {
     @State private var showSortSheet: Bool = false
     @State private var showSubredditSheet: Bool = false
     
-    @State private var selectedPost: String? = nil
-    
     @EnvironmentObject private var state: ContentViewState
     
     var body: some View {

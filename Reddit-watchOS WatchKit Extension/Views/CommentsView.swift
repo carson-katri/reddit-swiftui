@@ -28,10 +28,7 @@ struct CommentsView: View {
     
     var body: some View {
         // Load the comments
-        RequestView([CommentListing].self, Request {
-            Url(API.postURL(post.subreddit, post.id))
-            Header.Accept(.json)
-        }) { listings in
+        RequestView([CommentListing].self, API.default.post(post.subreddit, post.id)) { listings in
             if listings != nil {
                 // `dropFirst` because `first` is the actual post
                 if listings!.dropFirst().map({ $0.data.children }).flatMap({ $0.map { $0.data } }).count > 0 {

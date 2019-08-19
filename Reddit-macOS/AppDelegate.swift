@@ -61,6 +61,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSToolbarDelegate, NSTextFie
         API.default.logout()
     }
     
+    // TODO: Implement this
+    @IBAction func newPost(_ sender: Any) {
+        
+    }
+    // TODO: Implement this
+    @IBAction func sendComment(_ sender: Any) {
+        
+    }
+    // TODO: Implement this
+    @IBAction func upvote(_ sender: Any) {
+        print("Upvoted command")
+    }
+    // TODO: Implement this
+    @IBAction func downvote(_ sender: Any) {
+        print("Downvoted command")
+    }
+    
+    
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }

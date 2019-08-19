@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AddCommentView: View {
     @Binding var text: String
-    let send: ((String) -> ())
+    let parentName: String
     
     var body: some View {
         HStack {
@@ -21,21 +21,22 @@ struct AddCommentView: View {
             .frame(width: 30, height: 30)
             .foregroundColor(.blue)
             .onTapGesture {
-                self.send(self.text)
+                API.default.comment(self.text, on: self.parentName) {
+                    self.text = ""
+                }
             }
         }
         .padding(10)
         .background(Color("popover"))
+        //.cornerRadius(5)
     }
 }
 
 #if DEBUG
 struct AddCommentView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCommentView(text: .constant("")) { comment in
-            
-        }
-            .environment(\.colorScheme, .dark)
+        AddCommentView(text: .constant(""), parentName: "t3_helloworld")
+            //.environment(\.colorScheme, .dark)
     }
 }
 #endif
