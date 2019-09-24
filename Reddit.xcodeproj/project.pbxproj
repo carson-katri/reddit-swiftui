@@ -20,6 +20,7 @@
 		26C1D7FB22E33FD40057DED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FA22E33FD40057DED1 /* Assets.xcassets */; };
 		26C1D7FE22E33FD40057DED1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */; };
 		26C1D80122E33FD40057DED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C1D7FF22E33FD40057DED1 /* LaunchScreen.storyboard */; };
+		26EC1892233AA2A1007456B7 /* privacy_policy.md in Resources */ = {isa = PBXBuildFile; fileRef = 26EC1891233AA2A1007456B7 /* privacy_policy.md */; };
 		B508E10022F8F6F7002C4C76 /* banner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B508E0FF22F8F6F7002C4C76 /* banner.jpeg */; };
 		B5145A1F22EFD4E6009237BD /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746F0A22ECD4DC00A57918 /* CommentsView.swift */; };
 		B5145A2122EFD557009237BD /* MetadataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E60CB522EFD2A000A0075B /* MetadataView.swift */; };
@@ -167,7 +168,7 @@
 		26B69D1C22E52B7F001AD18F /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		26B69D2022E53213001AD18F /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 		26BBF27022E66EAD006CC669 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
-		26C1D7F122E33FD30057DED1 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26C1D7F122E33FD30057DED1 /* Homepage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C1D7F422E33FD30057DED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26C1D7F622E33FD30057DED1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		26C1D7F822E33FD30057DED1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		26C1D7FD22E33FD40057DED1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26C1D80022E33FD40057DED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26C1D80222E33FD40057DED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26EC1891233AA2A1007456B7 /* privacy_policy.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		B508E0FF22F8F6F7002C4C76 /* banner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = banner.jpeg; sourceTree = "<group>"; };
 		B508E10322F8FA16002C4C76 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		B508E10422F8FA16002C4C76 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				B59DE46B22F8CBD800D8BD1C /* README.md */,
+				26EC1891233AA2A1007456B7 /* privacy_policy.md */,
 				B511A2EB22EE8A2D0062B8D4 /* Shared */,
 				26C1D7F322E33FD30057DED1 /* Reddit-iOS */,
 				B5A7595F22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */,
@@ -298,7 +301,7 @@
 		26C1D7F222E33FD30057DED1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26C1D7F122E33FD30057DED1 /* Reddit.app */,
+				26C1D7F122E33FD30057DED1 /* Homepage.app */,
 				B5A7595822EF97D6001FD4F1 /* Reddit.app */,
 				B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */,
 				B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */,
@@ -577,7 +580,7 @@
 				B5A7594922EE8EBA001FD4F1 /* Request */,
 			);
 			productName = Reddit;
-			productReference = 26C1D7F122E33FD30057DED1 /* Reddit.app */;
+			productReference = 26C1D7F122E33FD30057DED1 /* Homepage.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B533A68522F2533800FD3FB2 /* Reddit-macOS */ = {
@@ -714,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C1D80122E33FD40057DED1 /* LaunchScreen.storyboard in Resources */,
+				26EC1892233AA2A1007456B7 /* privacy_policy.md in Resources */,
 				B557366B2303319100E41BE7 /* API.plist in Resources */,
 				26C1D7FE22E33FD40057DED1 /* Preview Assets.xcassets in Resources */,
 				B508E10022F8F6F7002C4C76 /* banner.jpeg in Resources */,
@@ -1032,6 +1036,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "Reddit-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				ENABLE_PREVIEWS = YES;
@@ -1041,7 +1046,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carsonkatri.RedditSwiftUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Homepage;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -1057,6 +1062,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "Reddit-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				ENABLE_PREVIEWS = YES;
@@ -1066,7 +1072,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carsonkatri.RedditSwiftUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Homepage;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
