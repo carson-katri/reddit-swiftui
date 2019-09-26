@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MetadataView: View {
-    let post: Post
+    @State var post: Post
     let spaced: Bool
     
     var stickied: some View {
@@ -33,8 +33,9 @@ struct MetadataView: View {
                 Spacer()
             }
             stickied
+            VoteView(votable: $post)
             /// Tuples store the SF Symbols, text, and color
-            ForEach([("arrow.up", "\(post.score)", Color.orange), ("text.bubble", "\(post.num_comments)", Color.primary), ("clock", "\(timeSince(post.created_utc))", Color.primary)], id: \.0) { data in
+            ForEach([("text.bubble", "\(post.num_comments)", Color.primary), ("clock", "\(timeSince(post.created_utc))", Color.primary)], id: \.0) { data in
                 Group {
                     Image(systemName: data.0)
                     Text(data.1)

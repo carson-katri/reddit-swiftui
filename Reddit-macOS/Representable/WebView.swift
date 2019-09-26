@@ -20,3 +20,4 @@ struct WebView : NSViewRepresentable {
         nsView.load(URLRequest(url: url))
     }
 }
+

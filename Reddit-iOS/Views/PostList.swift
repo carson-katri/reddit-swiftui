@@ -15,10 +15,7 @@ struct PostList: View {
     
     var body: some View {
         /// Load posts from web and decode as `Listing`
-        RequestView(Listing.self, Request {
-            Url(API.subredditURL(subreddit, sortBy))
-            Query(["raw_json":"1"])
-        }) { listing in
+        RequestView(Listing.self, API.default.posts(subreddit, sortBy)) { listing in
             /// List of `PostView`s when loaded
             List(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
                 NavigationLink(destination: PostDetailView(post: post)) {

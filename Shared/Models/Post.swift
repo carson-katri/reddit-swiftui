@@ -9,7 +9,7 @@
 import Foundation
 
 /// A post from the Reddit API
-struct Post: Decodable, Identifiable {
+struct Post: Thing, Decodable, Identifiable {
     let title: String
     let name: String
     let id: String
@@ -21,6 +21,7 @@ struct Post: Decodable, Identifiable {
     let author: String
     let subreddit: String
     let score: Int
+    var likes: Bool?
     let num_comments: Int
     let stickied: Bool
     let created_utc: Double

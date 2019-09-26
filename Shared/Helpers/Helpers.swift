@@ -17,9 +17,8 @@ func timeSince(_ interval: TimeInterval) -> String {
 
 /// `SwiftUI` compatibility
 #if os(macOS)
-extension Image {
-    init(systemName: String) {
-        self.init(nsImage: NSImage())
-    }
+func Image(systemName: String) -> some View {
+    SFSymbol.named(systemName)
+        .frame(width: 15, height: 15)
 }
 #endif

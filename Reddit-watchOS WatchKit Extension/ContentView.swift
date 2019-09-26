@@ -17,10 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         /// Load the `Post`s
-        RequestView(Listing.self, Request {
-            Url(API.subredditURL(subreddit, sortBy))
-            Query(["raw_json":"1"])
-        }) { listing in
+        RequestView(Listing.self, API.default.posts(subreddit, sortBy)) { listing in
             /// List of `PostView`s when loaded
             List {
                 /// Settings `Button`

@@ -5,9 +5,9 @@
         "package": "Request",
         "repositoryURL": "https://github.com/carson-katri/swift-request",
         "state": {
-          "branch": null,
-          "revision": "5de85a849f22e56471af6cb0367bd575519b131f",
-          "version": "1.1.1"
+          "branch": "base64",
+          "revision": "c38ebea8fc84d986b9d18f8a971851754a63248f",
+          "version": null
         }
       }
     ]
