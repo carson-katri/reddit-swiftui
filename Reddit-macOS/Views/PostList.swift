@@ -25,7 +25,9 @@ struct PostList: View {
                     ForEach(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
                         NavigationLink(destination: PostDetailView(post: post)) {
                             PostView(post: post)
-                                .tag(post.id)
+                            .tag(post.id)
+                            .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+
                             /// Double-click to open a new window for the `PostDetailView`
                             .onTapGesture(count: 2) {
                                 let controller = DetailWindowController(rootView: PostDetailView(post: post))
