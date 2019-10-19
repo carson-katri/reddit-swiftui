@@ -47,7 +47,7 @@ struct CommentView: View {
 
     var authorText: some View {
         if comment.author == postAuthor {
-            return Text(comment.author).foregroundColor(.accentColor)
+            return Text(comment.author).foregroundColor(.accentColor).bold()
         } else {
             return Text(comment.author)
         }
