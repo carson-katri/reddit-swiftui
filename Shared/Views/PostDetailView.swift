@@ -66,3 +66,11 @@ struct PostDetailView: View {
         #endif
     }
 }
+
+#if DEBUG
+struct PostDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        PostDetailView(post: Post.example)
+    }
+}
+#endif

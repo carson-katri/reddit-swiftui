@@ -63,3 +63,12 @@ struct Post: Decodable, Identifiable {
         }
     }
 }
+
+#if DEBUG
+extension Post {
+    /// Used to create a Post for example Debug purposes
+    static var example: Self {
+        return Post(title: "Hello World | This is secondary text", name: "hello-world", id: "hw", selftext: "This is some body content. Blah blah\nblah blah blah", selftext_html: nil, thumbnail: "blahblah", url: "", author: "me", subreddit: "swift", score: 1000, num_comments: 50, stickied: true, created_utc: Date().timeIntervalSince1970 - 100, preview: nil, link_flair_text: "Hello World", is_original_content: true, spoiler: false, replies: nil)
+    }
+}
+#endif
