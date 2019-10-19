@@ -44,6 +44,14 @@ struct CommentView: View {
     let comment: Comment
     let postAuthor: String
     let nestLevel: Int
+
+    var authorText: some View {
+        if comment.author == postAuthor {
+            return Text(comment.author).foregroundColor(.accentColor)
+        } else {
+            return Text(comment.author)
+        }
+    }
     
     var body: some View {
         Group {
@@ -57,12 +65,7 @@ struct CommentView: View {
                 /// Content
                 VStack(alignment: .leading) {
                     HStack {
-                        if comment.author == postAuthor {
-                            Text(comment.author)
-                                .foregroundColor(.accentColor)
-                        } else {
-                            Text(comment.author)
-                        }
+                        authorText
                         Image(systemName: "arrow.up")
                         Text("\(comment.score)")
                     }
