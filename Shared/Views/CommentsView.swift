@@ -27,7 +27,7 @@ struct CommentsView: View {
                 // `dropFirst` because `first` is the actual post
                 if listings!.dropFirst().map({ $0.data.children }).flatMap({ $0.map { $0.data } }).count > 0 {
                     ForEach(listings!.dropFirst().map({ $0.data.children }).flatMap { $0.map { $0.data } }, id: \.id) { comment in
-                        CommentView(comment: comment, nestLevel: 0)
+                        CommentView(comment: comment, postAuthor: self.post.author, nestLevel: 0)
                     }
                 } else {
                     self.noComments
@@ -42,7 +42,16 @@ struct CommentsView: View {
 
 struct CommentView: View {
     let comment: Comment
+    let postAuthor: String
     let nestLevel: Int
+
+    var authorText: some View {
+        if comment.author == postAuthor {
+            return Text(comment.author).foregroundColor(.accentColor).bold()
+        } else {
+            return Text(comment.author)
+        }
+    }
     
     var body: some View {
         Group {
@@ -56,12 +65,12 @@ struct CommentView: View {
                 /// Content
                 VStack(alignment: .leading) {
                     HStack {
-                        Text(comment.author)
+                        authorText
                         Image(systemName: "arrow.up")
                         Text("\(comment.score)")
                     }
-                    .font(.caption)
-                    .opacity(0.75)
+                        .font(.caption)
+                        .opacity(0.75)
                     Text(comment.body ?? "")
                 }
             }
@@ -70,7 +79,7 @@ struct CommentView: View {
             /// Recursive comments
             if comment.replies != nil {
                 ForEach(comment.replies!.data.children.map { $0.data }, id: \.id) { reply in
-                    CommentView(comment: reply, nestLevel: self.nestLevel + 1)
+                    CommentView(comment: reply, postAuthor: self.postAuthor, nestLevel: self.nestLevel + 1)
                 }
             }
         }
