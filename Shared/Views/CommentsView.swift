@@ -9,6 +9,8 @@
 import SwiftUI
 import Request
 
+// MARK: - CommentsView
+
 struct CommentsView: View {
     let post: Post
     
@@ -39,6 +41,8 @@ struct CommentsView: View {
         }
     }
 }
+
+// MARK: - CommentView
 
 struct CommentView: View {
     let comment: Comment
@@ -85,3 +89,20 @@ struct CommentView: View {
         }
     }
 }
+
+// MARK: - Comment View preview
+
+#if DEBUG
+struct CommentView_Previews: PreviewProvider {
+    static func example(for author: String, nested: Int = 5) -> some View {
+        CommentView(comment: Comment(nested: nested), postAuthor: author, nestLevel: 0).frame(width: nil, height: 60)
+    }
+
+    static var previews: some View {
+        VStack {
+            example(for: "not", nested: 2)
+            example(for: "sirarkimedes")
+        }
+    }
+}
+#endif
