@@ -46,7 +46,7 @@ extension Comment {
         id = "123"
         author = "sirarkimedes"
         score = 123556
-        body = "The Greatest Of All Time"
+        body = "This is a body of text that is purely to act as an example!"
         if nested != 0 {
             replies = CommentListing(data: CommentListing.CommentListingData(children: [CommentListing.CommentListingData.CommentData(data: Comment(nested: nested - 1))]))
         } else{
