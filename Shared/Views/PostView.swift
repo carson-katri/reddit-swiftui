@@ -14,13 +14,6 @@ struct PostView: View {
     
     var body: some View {
         HStack(spacing: 5) {
-            if post.thumbnail != "self" {
-                RequestImage(Url(post.thumbnail))
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .clipped()
-                    .cornerRadius(5.0)
-            }
             VStack(alignment: .leading) {
                 #if os(iOS)
                 Text(post.title)
@@ -45,6 +38,13 @@ struct PostView: View {
                 MetadataView(post: post, spaced: false)
                     .font(.caption)
                     .opacity(0.75)
+            }
+            if post.thumbnail != "self" {
+                RequestImage(Url(post.thumbnail))
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 50, height: 50, alignment: .center)
+                    .clipped()
+                    .cornerRadius(5.0)
             }
         }
     }
