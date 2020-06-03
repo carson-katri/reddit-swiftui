@@ -22,8 +22,16 @@ struct ContentView : View {
     var body: some View {
         NavigationView {
             /// Load the posts
-            PostList(subreddit: state.subreddit, sortBy: state.sortBy)
-                .frame(minWidth: 300)
+            RequestView(Listing.self, Request {
+                Url(API.subredditURL(state.subreddit, sortBy))
+                Query(["raw_json":"1"])
+            }) { listing in
+                PostList(listing: listing, subreddit: self.state.subreddit, sortBy: self.state.sortBy)
+                    .frame(minWidth: 300)
+                /// Spinner when loading
+                SpinnerView()
+                    .frame(minWidth: 300, minHeight: 300)
+            }
             Text("Select a post")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

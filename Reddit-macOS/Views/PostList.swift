@@ -10,33 +10,36 @@ import SwiftUI
 import Request
 
 struct PostList: View {
+    let listing: Listing?
     let subreddit: String
     let sortBy: SortBy
+    
+    @State private var selection: String? = nil
     
     var body: some View {
         List {
             Section(header: Text("\(subreddit) | \(sortBy.rawValue)")) {
-                /// Load posts from web and decode as `Listing`
-                RequestView(Listing.self, Request {
-                    Url(API.subredditURL(subreddit, sortBy))
-                    Query(["raw_json":"1"])
-                }) { listing in
-                    /// List of `PostView`s when loaded
-                    ForEach(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
-                        NavigationLink(destination: PostDetailView(post: post)) {
-                            PostView(post: post)
+                /// List of `PostView`s when loaded
+                ForEach(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
+                    VStack {
+                        NavigationLink(destination: PostDetailView(post: post), tag: post.id, selection: self.$selection) { EmptyView() }
+                        PostView(post: post)
                             .tag(post.id)
                             .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                            .contentShape(Rectangle())
                             /// Double-click to open a new window for the `PostDetailView`
                             .onTapGesture(count: 2) {
-                                let controller = DetailWindowController(rootView: PostDetailView(post: post))
+                                let detailView = PostDetailView(post: post)
+                                
+                                let controller = DetailWindowController(rootView: detailView)
                                 controller.window?.title = post.title
                                 controller.showWindow(nil)
-                            }
+                        }
+                            /// Adding after the double tap so that double tap takes precedence
+                        .onTapGesture(count: 1) {
+                            self.selection = post.id
                         }
                     }
-                    /// Spinner when loading
-                    SpinnerView()
                 }
             }
         }
