@@ -13,7 +13,7 @@ struct PostView: View {
     let post: Post
     
     var body: some View {
-        HStack(spacing: 5) {
+        HStack {
             VStack(alignment: .leading) {
                 #if os(iOS)
                 Text(post.title)
@@ -40,6 +40,7 @@ struct PostView: View {
                     .opacity(0.75)
             }
             if post.thumbnail != "self" {
+                Spacer()
                 RequestImage(Url(post.thumbnail))
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 50, height: 50, alignment: .center)
