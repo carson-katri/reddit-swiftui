@@ -1306,8 +1306,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/carson-katri/swift-request";
 			requirement = {
-				branch = base64;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
