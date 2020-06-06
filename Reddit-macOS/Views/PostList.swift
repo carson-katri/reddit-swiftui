@@ -15,9 +15,10 @@ struct PostList: View {
     let sortBy: SortBy
     
     @State private var selection: String? = nil
+    @State private var selectedPostIds: Set<String> = Set()
     
     var body: some View {
-        List {
+        List(selection: $selectedPostIds) {
             Section(header: Text("\(subreddit) | \(sortBy.rawValue)")) {
                 /// List of `PostView`s when loaded
                 ForEach(listing != nil ? listing!.data.children.map { $0.data } : []) { post in
@@ -38,8 +39,10 @@ struct PostList: View {
                             /// Adding after the double tap so that double tap takes precedence
                         .onTapGesture(count: 1) {
                             self.selection = post.id
+                            self.selectedPostIds = Set(arrayLiteral: post.id)
                         }
                     }
+                    .tag(post.id)
                 }
             }
         }
