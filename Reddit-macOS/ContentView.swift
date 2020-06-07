@@ -15,7 +15,7 @@ struct ContentView : View {
     @State private var showSortSheet: Bool = false
     @State private var showSubredditSheet: Bool = false
     
-    @State private var selectedPost: String? = nil
+    @State private var selectedPostId: String? = nil
     
     @EnvironmentObject private var state: ContentViewState
     
@@ -26,8 +26,13 @@ struct ContentView : View {
                 Url(API.subredditURL(state.subreddit, sortBy))
                 Query(["raw_json":"1"])
             }) { listing in
-                PostList(listing: listing, subreddit: self.state.subreddit, sortBy: self.state.sortBy)
+                if listing != nil {
+                    PostList(posts: listing!.posts, subreddit: self.state.subreddit, sortBy: self.state.sortBy, selectedPostId: self.$selectedPostId)
                     .frame(minWidth: 300)
+                }
+                else {
+                    Text("Error while loading posts").frame(minWidth: 300, minHeight: 300)
+                }
                 /// Spinner when loading
                 SpinnerView()
                     .frame(minWidth: 300, minHeight: 300)
