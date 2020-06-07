@@ -48,14 +48,12 @@ struct PostList: View {
             Section(header: Text("\(subreddit) | \(sortBy.rawValue)")) {
                 /// List of `PostView`s when loaded
                 ForEach(posts) { post in
-                    VStack {
-                        NavigationLink(destination: PostDetailView(post: post), tag: post.id, selection: self.selectedNavigationLink) { EmptyView() }
+                    NavigationLink(destination: PostDetailView(post: post), tag: post.id, selection: self.selectedNavigationLink) {
                         PostView(post: post)
                     }
                     .tag(post.id)
                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
                     .contentShape(Rectangle())
-
                         /// Double-click to open a new window for the `PostDetailView`
                         .onTapGesture(count: 2) {
                             let detailView = PostDetailView(post: post)
@@ -70,6 +68,7 @@ struct PostList: View {
                     }
                 }
             }
+            .collapsible(false)
         }
         .listStyle(SidebarListStyle())
     }
