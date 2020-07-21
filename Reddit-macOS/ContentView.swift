@@ -26,26 +26,21 @@ struct ContentView : View {
                 Url(API.subredditURL(state.subreddit, sortBy))
                 Query(["raw_json":"1"])
             }) { listing in
-                if listing != nil {
-                    PostList(posts: listing!.posts, subreddit: self.state.subreddit, sortBy: self.state.sortBy, selectedPostId: self.$selectedPostId)
-                    .frame(minWidth: 300)
-                }
-                else {
-                    Text("Error while loading posts").frame(minWidth: 300, minHeight: 300)
-                }
+                PostList(posts: listing?.posts ?? [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: false, selectedPostId: self.$selectedPostId)
+                        .frame(minWidth: 300)
                 /// Spinner when loading
-                SpinnerView()
-                    .frame(minWidth: 300, minHeight: 300)
+                PostList(posts: [], subreddit: self.state.subreddit, sortBy: self.state.sortBy, isLoading: true, selectedPostId: self.$selectedPostId)
+                .frame(minWidth: 300)
             }
             Text("Select a post")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .touchBar {
             /*Picker("Sort By", selection: $state.sortBy) {
-                ForEach(SortBy.allCases, id: \.rawValue) { sort in
-                    Text(sort.rawValue)
-                }
-            }*/
+             ForEach(SortBy.allCases, id: \.rawValue) { sort in
+             Text(sort.rawValue)
+             }
+             }*/
             Text("Hello, World!")
         }
     }
