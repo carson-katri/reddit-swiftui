@@ -18,30 +18,24 @@ struct PostList: View {
     @Binding var selectedPostId: String?
 
     private var selectedPostIds: Binding<Set<String>> {
-        Binding(
-            get: {
-                if let selectedPostId = self.selectedPostId {
-                    return Set(arrayLiteral: selectedPostId)
-                }
-                else {
-                    return Set()
-                }
-        },
-            set: {
-                self.selectedPostId = $0.first
-        }
-        )
+        Binding(get: {
+            if let selectedPostId = self.selectedPostId {
+                return Set(arrayLiteral: selectedPostId)
+            }
+            else {
+                return Set()
+            }
+        }, set: {
+            self.selectedPostId = $0.first
+        })
     }
 
     private var selectedNavigationLink: Binding<String?> {
-        Binding<String?>(
-            get: {
-                return self.selectedPostId
-        },
-            set: { selectedPostId in
-                // Absorbing any change that NavigationLink does to its selection property
-        }
-        )
+        Binding<String?>(get: {
+            return self.selectedPostId
+        }, set: { selectedPostId in
+            // Absorbing any change that NavigationLink does to its selection property
+        })
     }
     
     var body: some View {
@@ -59,17 +53,17 @@ struct PostList: View {
                         .tag(post.id)
                         .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
                         .contentShape(Rectangle())
-                            /// Double-click to open a new window for the `PostDetailView`
-                            .onTapGesture(count: 2) {
-                                let detailView = PostDetailView(post: post)
+                        /// Double-click to open a new window for the `PostDetailView`
+                        .onTapGesture(count: 2) {
+                            let detailView = PostDetailView(post: post)
 
-                                let controller = DetailWindowController(rootView: detailView)
-                                controller.window?.title = post.title
-                                controller.showWindow(nil)
+                            let controller = DetailWindowController(rootView: detailView)
+                            controller.window?.title = post.title
+                            controller.showWindow(nil)
                         }
-                            /// Adding after the double tap so that double tap takes precedence
-                            .onTapGesture(count: 1) {
-                                self.selectedPostId = post.id
+                        /// Adding after the double tap so that double tap takes precedence
+                        .onTapGesture(count: 1) {
+                            self.selectedPostId = post.id
                         }
                     }
                 }
