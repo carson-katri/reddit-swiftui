@@ -54,14 +54,14 @@ struct PostDetailView: View {
                 Text(post.selftext)
             }
             VStack{
-                ScrollView(.horizontal, showsIndicators: false) {
+                ScrollView(.horizontal) {
                     HStack{
                         if post.flairs.count > 0 {
                             FlairView(flairs: post.flairs)
                         }
                         MetadataView(post: post, spaced: true)
                     }
-                    //.lineLimit()
+                    .padding(.bottom, 10)
                 }
             }
             CommentsView(post: post)
