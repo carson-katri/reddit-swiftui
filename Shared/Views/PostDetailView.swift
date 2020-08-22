@@ -53,10 +53,17 @@ struct PostDetailView: View {
             if post.selftext != "" {
                 Text(post.selftext)
             }
-            if post.flairs.count > 0 {
-                FlairView(flairs: post.flairs)
+            VStack{
+                ScrollView(.horizontal) {
+                    HStack{
+                        if post.flairs.count > 0 {
+                            FlairView(flairs: post.flairs)
+                        }
+                        MetadataView(post: post, spaced: true)
+                    }
+                    .padding(.bottom, 10)
+                }
             }
-            MetadataView(post: post, spaced: true)
             CommentsView(post: post)
         }
         #if os(iOS)
