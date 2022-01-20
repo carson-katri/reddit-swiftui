@@ -9,7 +9,7 @@
 import Foundation
 
 /// Sorting method for Reddit API
-enum SortBy: String, CaseIterable {
+public enum SortBy: String, CaseIterable {
     case hot
     case new
     case controversial

@@ -59,7 +59,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Reddit-watchOS WatchKit App">
+         RemotePath = "/Reddit">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B5A7595A22EF97D6001FD4F1"
@@ -80,7 +80,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Reddit-watchOS WatchKit App">
+         RemotePath = "/Reddit">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B5A7595A22EF97D6001FD4F1"
