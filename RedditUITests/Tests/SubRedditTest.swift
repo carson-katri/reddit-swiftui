@@ -28,25 +28,18 @@ class SubRedditTest: BaseUITest {
             .tapOnSubThreadHeading()
         changeSubThreadScreen
             .changeSubThreadText(newSubRedditText: SubbReddits.java.rawValue)
+            .swipeAwayScreen()
         homeScreen
-            .SortingMethodIsDisplaying(sortingMethod: SubbReddits.java.rawValue)
+            .SubRedditIsDisplaying(subReddit: SubbReddits.java.rawValue)
     }
 
-    func testChangeSubRedditToPython() {
+    func testChangeSubRedditToCode() {
         homeScreen
             .tapOnSubThreadHeading()
         changeSubThreadScreen
-            .changeSubThreadText(newSubRedditText: SubbReddits.python.rawValue)
+            .changeSubThreadText(newSubRedditText: SubbReddits.code.rawValue)
+            .swipeAwayScreen()
         homeScreen
-            .SortingMethodIsDisplaying(sortingMethod: SubbReddits.python.rawValue)
-    }
-
-    func testChangeSubRedditToSwift() {
-        homeScreen
-            .tapOnSubThreadHeading()
-        changeSubThreadScreen
-            .changeSubThreadText(newSubRedditText: SubbReddits.swift.rawValue)
-        homeScreen
-            .SortingMethodIsDisplaying(sortingMethod: SubbReddits.swift.rawValue)
+            .SubRedditIsDisplaying(subReddit: SubbReddits.code.rawValue)
     }
 }

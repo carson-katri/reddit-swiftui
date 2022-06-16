@@ -27,7 +27,7 @@ struct ContentView : View {
                     self.showSubredditSheet.toggle()
                 }) {
                     Text("r/\(self.subreddit)")
-                }.accessibilityIdentifier("subRedditText")
+                }.accessibilityIdentifier("subRedditButton")
             }, trailing: HStack {
                 Button(action: {
                     self.showSortSheet.toggle()
@@ -49,16 +49,16 @@ struct ContentView : View {
             /// Subreddit selection `Popover`
             .popover(isPresented: $showSubredditSheet, attachmentAnchor: .point(UnitPoint(x: 20, y: 20))) {
                 HStack(spacing: 0) {
-                    Text("r/")
+                    Text("r/").accessibilityIdentifier("defaultText")
                     TextField("Subreddit", text: self.$subreddit) {
                         self.showSubredditSheet.toggle()
-                    }.accessibilityIdentifier("subRedditText1")
+                    }.accessibilityIdentifier("subRedditText")
                 }
                 .frame(width: 200)
                 .padding()
                 .background(Color("popover"))
                 .cornerRadius(10)
-            }
+            }   .accessibilityIdentifier("subRedditPopOver")
             Text("Select a post")
         }
     }

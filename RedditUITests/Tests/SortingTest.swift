@@ -26,7 +26,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.top.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.top.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.top.rawValue)
     }
@@ -35,7 +35,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.hot.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.hot.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.hot.rawValue)
     }
@@ -44,7 +44,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.new.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.new.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.new.rawValue)
     }
@@ -53,7 +53,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.controversial.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.controversial.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.controversial.rawValue)
     }
@@ -62,7 +62,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.rising.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.rising.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.rising.rawValue)
     }
@@ -71,7 +71,7 @@ class SortingTest: BaseUITest {
         homeScreen
             .tapOnSortButton()
         filterScreen
-            .tapSortMethod(sortingMethod: SortingMethods.rising.rawValue)
+            .chooseSortMethod(sortingMethod: SortingMethods.rising.rawValue)
         homeScreen
             .SortingMethodIsDisplaying(sortingMethod: SortingMethods.rising.rawValue)
     }

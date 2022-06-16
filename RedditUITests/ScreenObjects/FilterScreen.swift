@@ -18,7 +18,7 @@ class FilterScreen {
     }
 
     @discardableResult
-    func tapSortMethod(sortingMethod: String) -> Self {
+    func chooseSortMethod(sortingMethod: String) -> Self {
 //        let fistButton = app.buttons.matching(identifier: "\(sortingMethod)").element(boundBy: 1)
         app.buttons["\(sortingMethod)"].firstMatch.tapElement()
         return self

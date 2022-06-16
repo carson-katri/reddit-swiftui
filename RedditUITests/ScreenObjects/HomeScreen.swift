@@ -13,7 +13,7 @@ class HomeScreen {
 
     var app: XCUIApplication
 
-    private lazy var subRedditButton = app.buttons["subRedditText"]
+    private lazy var subRedditButton = app.buttons["subRedditButton"]
     private lazy var sortText = app.staticTexts["sortIconText"]
 
     init(app: XCUIApplication) {
@@ -39,7 +39,7 @@ class HomeScreen {
     }
 
     @discardableResult
-    func SortingMethodIsDisplaying(sortingMethod: String) -> Self {
+    func  SortingMethodIsDisplaying(sortingMethod: String) -> Self {
         sortText.isDisplayingOnScreen()
         XCTAssert(sortText.label == sortingMethod) 
         return self
@@ -48,7 +48,7 @@ class HomeScreen {
     @discardableResult
     func SubRedditIsDisplaying(subReddit: String) -> Self {
         subRedditButton.isDisplayingOnScreen()
-        XCTAssert(sortText.label == subReddit)
+        XCTAssert(subRedditButton.label == "r/" + subReddit)
         return self
     }
 }

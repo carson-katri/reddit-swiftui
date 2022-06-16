@@ -10,9 +10,8 @@ import Foundation
 import XCTest
 
 enum SubbReddits: String {
-    case swift
     case java
-    case python
+    case code
 }
 
 enum SortingMethods: String {
