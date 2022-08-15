@@ -203,7 +203,7 @@
 		B57D131922FD8F3500E7642E /* FlairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlairView.swift; sourceTree = "<group>"; };
 		B597CB9F22FCC86200389DF6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B59DE46B22F8CBD800D8BD1C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B5A7595822EF97D6001FD4F1 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit-watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A7596122EF97D6001FD4F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B5A7596322EF97D8001FD4F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				26C1D7F122E33FD30057DED1 /* Reddit.app */,
-				B5A7595822EF97D6001FD4F1 /* Reddit.app */,
+				B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */,
 				B5A7595B22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App.app */,
 				B5A7596A22EF97D8001FD4F1 /* Reddit-watchOS WatchKit Extension.appex */,
 				B533A68622F2533800FD3FB2 /* Reddit.app */,
@@ -660,7 +660,7 @@
 			);
 			name = "Reddit-watchOS";
 			productName = "Reddit-watchOS";
-			productReference = B5A7595822EF97D6001FD4F1 /* Reddit.app */;
+			productReference = B5A7595822EF97D6001FD4F1 /* Reddit-watchOS.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		B5A7595A22EF97D6001FD4F1 /* Reddit-watchOS WatchKit App */ = {
@@ -1352,7 +1352,7 @@
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
-				PRODUCT_NAME = Reddit;
+				PRODUCT_NAME = "Reddit-watchOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1365,7 +1365,7 @@
 				DEVELOPMENT_TEAM = FH9CW55WY5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carsonkatri.Reddit-watchOS";
-				PRODUCT_NAME = Reddit;
+				PRODUCT_NAME = "Reddit-watchOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
