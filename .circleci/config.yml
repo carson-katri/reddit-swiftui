@@ -21,4 +21,6 @@ workflows:
   build-and-run-tests:
     jobs:
       - run-unit-tests
-      - run-ui-tests
+      - run-ui-tests:
+          requires:
+            - run-unit-tests
