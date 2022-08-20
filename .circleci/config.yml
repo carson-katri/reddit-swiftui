@@ -13,7 +13,7 @@ jobs:
       - checkout 
       - run:
           name: "run unit tests"
-          command: "xcodebuild test -scheme RedditUnitTests -destination 'platform=iOS Simulator,id=6711103D-2732-45AD-B6EC-C620890BC437'"
+          command: "xcodebuild test -scheme RedditUnitTests -destination 'platform=iOS Simulator,id=0173AE56-BA34-4C95-9BC0-801F1F8CCAC7'"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
