@@ -2,16 +2,17 @@
 version: 2.1
 
 jobs:
-  say-hello:
+  test:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
+    macos:
+      xcode: 13.4.1
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - checkout 
       - run:
-          name: "Say hello"
+          name: "run unit tests"
           command: "xcodebuild test -scheme RedditUnitTests -destination 'platform=iOS Simulator,id=6711103D-2732-45AD-B6EC-C620890BC437'"
 
 # Invoke jobs via workflows
@@ -19,4 +20,4 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - test
