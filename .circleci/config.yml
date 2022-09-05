@@ -1,11 +1,15 @@
 version: 2.1
 
+orbs:
+  ruby: circleci/ruby@1.2.0
+
 jobs:
   run-unit-tests:
     macos:
       xcode: 13.4.1
     steps:
       - checkout 
+      - ruby/install-deps
       - run:
           name: "run unit tests"
           command: "bundle exec fastlane run_unit_tests"
@@ -14,6 +18,7 @@ jobs:
       xcode: 13.4.1
     steps:
       - checkout 
+      - ruby/install-deps
       - run:
           name: "run ui tests"
           command: "bundle exec fastlane run_ui_tests"
