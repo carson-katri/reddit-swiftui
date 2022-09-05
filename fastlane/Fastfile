@@ -15,6 +15,7 @@ platform :ios do
     )
   end
 
+  desc "Runs UI tests"
   lane :run_ui_tests do
     scan(
       scheme: "RedditUITests",

@@ -29,7 +29,7 @@ Runs unit tests
 [bundle exec] fastlane ios run_ui_tests
 ```
 
-
+Runs UI tests
 
 ----
 

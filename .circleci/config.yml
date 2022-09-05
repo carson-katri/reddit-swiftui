@@ -1,24 +1,26 @@
 version: 2.1
 
-orbs:
-  ruby: circleci/ruby@1.2.0
-
 jobs:
-  build:
+  run-unit-tests:
     macos:
-      xcode: "13.1.0"
-    working_directory: /Users/distiller/project
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: run_unit_tests
-    shell: /bin/bash --login -o pipefail
+      xcode: 13.4.1
     steps:
-      - checkout
-      - ruby/install-deps
+      - checkout 
       - run:
-          name: fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
-      - store_test_results:
-          path: output/scan
+          name: "run unit tests"
+          command: "bundle exec fastlane run_unit_tests"
+  run-ui-tests:
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout 
+      - run:
+          name: "run ui tests"
+          command: "bundle exec fastlane run_ui_tests"
+workflows:
+  build-and-run-tests:
+    jobs:
+      - run-unit-tests
+      - run-ui-tests:
+          requires:
+            - run-unit-tests
