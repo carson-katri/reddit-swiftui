@@ -12,7 +12,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: "run unit tests"
-          command: "bundle exec fastlane pwd"
+          command: "pwd"
           # command: "bundle exec fastlane run_unit_tests"
   run-ui-tests:
     macos:
