@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Runs unit tests
 
+### ios pwd
+
+```sh
+[bundle exec] fastlane ios pwd
+```
+
+Prints current working directory
+
 ### ios run_ui_tests
 
 ```sh
