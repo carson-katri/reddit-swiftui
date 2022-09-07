@@ -17,7 +17,7 @@ platform :ios do
 
   desc "Prints current working directory"
   lane :pwd do 
-    sh("echo 'Printing out current working directory:'" "pwd")
+    sh("pwd")
   end
 
   desc "Runs UI tests"
