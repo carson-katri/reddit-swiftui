@@ -9,13 +9,12 @@ platform :ios do
   desc "Runs unit tests"
   lane :run_unit_tests do
     scan(
-      scheme: "RedditUnitTests",
       derived_data_path: ENV["DERIVED_DATA_PATH"],
       destination: ENV["IPHONE_12"],
       result_bundle: true
     )
   end
-  
+
   desc "Runs UI tests"
   lane :run_ui_tests do
     scan(
