@@ -12,9 +12,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: "run unit tests"
-          command: |
-            pwd
-            ls -lah
+          command: "bundle exec fastlane run_unit_tests"
   run-ui-tests:
     macos:
       xcode: 13.4.1
