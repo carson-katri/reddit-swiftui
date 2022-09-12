@@ -8,7 +8,7 @@ jobs:
     macos:
       xcode: 13.4.1
     environment:
-      FASTLANE_LANE: unit_tests
+      FASTLANE_LANE: run_unit_tests
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout 
@@ -25,7 +25,7 @@ jobs:
     macos:
       xcode: 13.4.1
     environment: 
-      FASTLANE_LANE: ui_tests
+      FASTLANE_LANE: run_ui_tests
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout 
