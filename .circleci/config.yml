@@ -7,25 +7,40 @@ jobs:
   run-unit-tests:
     macos:
       xcode: 13.4.1
+    environment:
+    FASTLANE_LANE: unit_tests
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout 
       - ruby/install-deps
       - run:
           name: "run unit tests"
-          command: "bundle exec fastlane run_unit_tests"
+          command: "bundle exec fastlane $FASTLANE_LANE"
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/unit_tests
+          
   run-ui-tests:
     macos:
       xcode: 13.4.1
+    environment: 
+    FASTLANE_LANE: ui_tests
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout 
       - ruby/install-deps
       - run:
           name: "run ui tests"
-          command: "bundle exec fastlane run_ui_tests"
+          command: "bundle exec fastlane $FASTLANE_LANE"
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/ui_tests
 workflows:
   build-and-run-tests:
     jobs:
       - run-unit-tests
-      # - run-ui-tests:
-      #     requires:
-      #       - run-unit-tests
+      - run-ui-tests:
+          requires:
+            - run-unit-tests

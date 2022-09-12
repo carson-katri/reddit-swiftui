@@ -11,7 +11,7 @@ platform :ios do
     scan(
       scheme: "RedditUnitTests",
       # derived_data_path: ENV["DERIVED_DATA_PATH"],
-      device: "iPhone 12",
+      device: ENV["IPHONE_12"],
       result_bundle: true
     )
   end
@@ -20,8 +20,8 @@ platform :ios do
   lane :run_ui_tests do
     scan(
       scheme: "RedditUITests",
-      derived_data_path: ENV["DERIVED_DATA_PATH"],
-      destination: ENV["IPHONE_12"],
+      # derived_data_path: ENV["DERIVED_DATA_PATH"],
+      device: ENV["IPHONE_12"],
       result_bundle: true
     )
   end
