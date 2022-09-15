@@ -3,10 +3,16 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.2.0
 
+executors:
+  mac-executor:
+    macos:
+      xcode: "13.4.1"
+    working_directory: /Users/distiller/project
+
 jobs:
   run-unit-tests:
-    macos:
-      xcode: 13.4.1
+    executor:
+      name: mac-executor
     environment:
       FASTLANE_LANE: run_unit_tests
     shell: /bin/bash --login -o pipefail
@@ -15,15 +21,17 @@ jobs:
       - ruby/install-deps
       - run:
           name: "run unit tests"
-          command: "bundle exec fastlane $FASTLANE_LANE"
+          command: |
+            mkdir output/unit_tests_results
+            "bundle exec fastlane $FASTLANE_LANE"
       - store_artifacts:
           path: output
       - store_test_results:
-          path: output/unit_tests
+          path: output/unit_tests_results
 
   run-ui-tests:
-    macos:
-      xcode: 13.4.1
+    executor:
+      name: mac-executor  
     environment: 
       FASTLANE_LANE: run_ui_tests
     shell: /bin/bash --login -o pipefail
