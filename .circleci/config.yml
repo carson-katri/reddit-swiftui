@@ -21,8 +21,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: "run unit tests"
-          command: |
-            "mkdir output/unit_tests_results"
+          command: "mkdir output/unit_tests_results"
       - store_artifacts:
           path: output
       - store_test_results:
