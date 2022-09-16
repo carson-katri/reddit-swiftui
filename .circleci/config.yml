@@ -23,7 +23,6 @@ jobs:
           name: "run unit tests"
           command: |
             "mkdir output/unit_tests_results"
-            "bundle exec fastlane $FASTLANE_LANE"
       - store_artifacts:
           path: output
       - store_test_results:
